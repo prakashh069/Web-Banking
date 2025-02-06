@@ -38,7 +38,7 @@ const LoginModal = ({ onClose }: { onClose: () => void }) =>{
   const [password, setPassword] = useState('');
   const router = useRouter();
   
-  const handleSubmit = () => {
+  const handleSubmit = (e:any) => {
     e.preventDefault();
     // console.log("the username is ", username, "the password is ", password);
     if(username && password){

@@ -71,7 +71,7 @@ const RegistrationPage = () => {
                   <Input type="password" placeholder="Password" value={formData.password} onChange={(e) => setFormData({ ...formData, password: e.target.value })} className="h-12" />
                   <Input type="password" placeholder="Confirm Password" value={formData.confirmPassword} onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })} className="h-12" />
                 </div>
-                <div className="border-2 border-dashed border-gray-200 rounded-xl p-8 bg-gray-50 text-center">
+                {/* <div className="border-2 border-dashed border-gray-200 rounded-xl p-8 bg-gray-50 text-center">
                   {showCamera ? (
                     <div className="space-y-4">
                       <Webcam ref={webcamRef} screenshotFormat="image/jpeg" className="w-full h-[300px] rounded-lg" />
@@ -89,7 +89,7 @@ const RegistrationPage = () => {
                       </Button>
                     </div>
                   )}
-                </div>
+                </div> */}
                 <div className="flex items-center space-x-2">
                   <Checkbox id="terms" />
                   <label htmlFor="terms" className="text-sm text-gray-600">I agree to the Terms and Conditions and Privacy Policy</label>
