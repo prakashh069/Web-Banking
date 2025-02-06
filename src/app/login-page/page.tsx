@@ -5,12 +5,14 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Camera, Key } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const LoginModal = ({ onClose }: { onClose: () => void }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [showCamera, setShowCamera] = useState(false);
+  const router = useRouter();
 
   const startCamera = async () => {
     try {
@@ -42,6 +44,13 @@ const LoginModal = ({ onClose }: { onClose: () => void }) => {
     window.location.href = "/register";
     onClose();
   };
+
+  const handleSubmit = () => {
+    // console.log("the username is ", username, "the password is ", password);
+    if(username && password){
+      router.push("/dashboard");
+    }
+  }
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
@@ -97,7 +106,7 @@ const LoginModal = ({ onClose }: { onClose: () => void }) => {
                     Register
                   </Button>
                 </div>
-                <Button className="w-full h-12">Login</Button>
+                <Button className="w-full h-12" onClick={handleSubmit}>Login</Button>
               </form>
             </TabsContent>
 
@@ -146,4 +155,3 @@ const LoginModal = ({ onClose }: { onClose: () => void }) => {
 };
 
 export default LoginModal;
-a
