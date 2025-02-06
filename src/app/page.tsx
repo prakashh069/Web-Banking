@@ -39,10 +39,11 @@ const LoginModal = ({ onClose }: { onClose: () => void }) =>{
   const router = useRouter();
   
   const handleSubmit = () => {
+    e.preventDefault();
     // console.log("the username is ", username, "the password is ", password);
-    // if(username && password){
+    if(username && password){
       router.push("/dashboard");
-    // }
+    }
   }
 
   return (
